@@ -6,12 +6,12 @@ def init_db():
         db.create_all()  # This will create the tables for the models
 
         # Check if the admin account already exists
-        if not Admin.query.filter_by(username='admin').first():
+        if not Admin.query.filter_by(username='Admin').first():
             # Create a default admin account
-            admin = Admin(username='admin', password='admin123')
+            admin = Admin(username='Admin', password='adminlogin')
             db.session.add(admin)
             db.session.commit()
-            print("Default admin account created (username: 'admin', password: 'admin123')")
+            print("Default admin account created (username: 'Admin', password: 'adminlogin')")
         else:
             print("Admin account already exists")
 
